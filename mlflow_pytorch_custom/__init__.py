@@ -1,4 +1,6 @@
 """
+SRC: mlflow.pytorch
+
 The ``mlflow.pytorch`` module provides an API for logging and loading PyTorch models. This module
 exports PyTorch models with the following flavors:
 
