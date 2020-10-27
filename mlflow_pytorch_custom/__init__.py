@@ -12,6 +12,7 @@ PyTorch (native) format
 import importlib
 import logging
 import os
+from mlflow.pytorch import pickle_module
 import yaml
 
 import cloudpickle
@@ -20,6 +21,7 @@ import pandas as pd
 
 import mlflow
 import mlflow.pyfunc.utils as pyfunc_utils
+import mlflow.pytorch.pickle_module
 from mlflow import pyfunc
 from mlflow.exceptions import MlflowException
 from mlflow.models import Model, ModelSignature
@@ -39,6 +41,7 @@ _PICKLE_MODULE_INFO_FILE_NAME = "pickle_module_info.txt"
 
 _logger = logging.getLogger(__name__)
 
+pickle_module = pickle_module
 
 def get_default_conda_env():
     """
