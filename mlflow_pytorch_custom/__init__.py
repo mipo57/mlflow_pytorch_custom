@@ -21,14 +21,13 @@ import pandas as pd
 
 import mlflow
 import mlflow.pyfunc.utils as pyfunc_utils
-import mlflow.pytorch.pickle_module
 from mlflow import pyfunc
 from mlflow.exceptions import MlflowException
 from mlflow.models import Model, ModelSignature
 from mlflow.models.model import MLMODEL_FILE_NAME
 from mlflow.models.utils import ModelInputExample, _save_example
 from mlflow.protos.databricks_pb2 import RESOURCE_DOES_NOT_EXIST
-from mlflow.pytorch import pickle_module as mlflow_pytorch_pickle_module
+from mlflow_pytorch_custom import pickle_module as mlflow_pytorch_pickle_module
 from mlflow.tracking.artifact_utils import _download_artifact_from_uri
 from mlflow.utils.environment import _mlflow_conda_env
 from mlflow.utils.file_utils import _copy_file_or_tree
@@ -40,8 +39,6 @@ _SERIALIZED_TORCH_MODEL_FILE_NAME = "model.pth"
 _PICKLE_MODULE_INFO_FILE_NAME = "pickle_module_info.txt"
 
 _logger = logging.getLogger(__name__)
-
-pickle_module = pickle_module
 
 def get_default_conda_env():
     """
